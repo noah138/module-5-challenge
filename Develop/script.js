@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    colorChanger();
     displayDate();
+    colorChanger();
+    showText();
 })
 
 // Displaying the current date
@@ -10,7 +11,6 @@ function displayDate() {
     var now = moment().format("dddd, MMMM Do");
     dateDisplay.text(now);
 }
-
 
 function colorChanger() {
     // retrieve current number of hours
@@ -37,13 +37,25 @@ function colorChanger() {
         }
     })
 }
-// Not sure how to incorporate AM and PM elements into the color changes
-
 
     // save button function
-    $(".saveBtn").on("click", function() {
-        // retrieve the values of the bordering boxes then save text
-        var description = $(this).siblings(".description").val();
-        var time = $(this).siblings(".hour").val();
-        localStorage.setItem(time, description);
-    })
+$(".saveBtn").on("click", function() {
+    // retrieve the values of the bordering boxes then save text
+    var description = $(this).siblings(".description").val();
+    var time = $(this).siblings().attr("id");
+    localStorage.setItem(time, description);
+})
+
+// function to render the text input to the right text boxes
+function showText() {
+    ($("#8").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#9").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#10").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#11").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#12").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#13").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#14").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#15").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#16").siblings(".description")).val(localStorage.getItem("8"));
+    ($("#17").siblings(".description")).val(localStorage.getItem("8"));
+}
