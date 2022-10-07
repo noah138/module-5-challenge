@@ -16,7 +16,7 @@ function colorChanger() {
     // retrieve current number of hours
     var currentHour = moment().hour()
     // loop through each row
-    $(".time-block").each(function () {
+    $(".description").each(function () {
         var rowHour = parseInt($(this).attr("id"));
         console.log(rowHour)
         // to compare rowHour with currentHour and change color accordingly
